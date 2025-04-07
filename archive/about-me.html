@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite</title>
+    <link rel="stylesheet" href="style/default.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <h1>Wer ist den dieser Mensch?</h1>
+    <h3>Hallo ich bin</h3>
+    <p>Name: Elija</p>
+    <p id="age">Alter: ??</p>
+    <p>Von: der Schweiz</p>
+    <p>Hobbys: Hackerspace, Kirche, Jugendarbeit</p>
+</body>
+</html>
+<script src="/scripts/scramble.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+            $("#navbar").load("/template/navbar.html");
+        });
+
+        function set_age() {
+            var heute = new Date();
+            var geb = new Date(2009, 3, 14); // März ist 2, da die Monate bei 0 beginnen.
+            
+            // Berechnung des Alters in Jahren
+            var age = heute.getFullYear() - geb.getFullYear();
+            var m = heute.getMonth() - geb.getMonth();
+            
+            // Falls der Geburtstag in diesem Jahr noch nicht stattgefunden hat, 1 Jahr abziehen
+            if (m < 0 || (m === 0 && heute.getDate() < geb.getDate())) {
+                age--;
+            }
+            
+            document.getElementById("age").innerHTML = "Alter: " + age;
+}
+
+setTimeout(set_age, 1000);
+
+</script>

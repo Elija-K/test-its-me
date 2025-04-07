@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite</title>
+    <link rel="stylesheet" href="style/default.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <h1>Was macht er den für Programmier-Projekte?</h1>
+    <h3>Hier findest du meine Aktuelle Projekte!</h3>
+    <h4>Projekte Liste (frisch aus Github):</h4>
+    <ul id="repo-list"></ul>
+</body>
+</html>
+<script src="/scripts/scramble.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+            $("#navbar").load("/template/navbar.html");
+            showprojects();
+        });
+        function showprojects() {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api.github.com/users/Elija-K/repos");
+        xhr.responseType = "json";
+        xhr.send();
+
+        xhr.onload = () => {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const response = xhr.response;
+                const repoList = document.getElementById("repo-list");
+
+                response.forEach(repo => {
+                    const listItem = document.createElement("li");
+                    listItem.innerHTML = "Name: " + repo.name + ", URL: <a href='" + repo.html_url + "' target='_blank'>Github</a>";
+                    repoList.appendChild(listItem);
+                });
+            } else {
+                console.error(`Error: ${xhr.status}`);
+            }
+        };
+}
+</script>

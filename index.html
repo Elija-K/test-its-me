@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite</title>
+    <link rel="stylesheet" href="/static/css/default.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <h1>Du, Ich, Wir, Hier?</h1>
+    <p>Ich bin Elija und das ist meine Seite</p>
+    <p>Ich höre gerne Musik und lerne gerne etwas neues über Computer</p>
+    <p>Ich bin <b id="age">??</b> Jahre alt</p>
+    <p>Komme aus der <b>Schweiz</b> und das wichtigste in meinem Leben ist <b>Jesus</b></p>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    // Automatisches Laden der Navigationsbar
+    $(document).ready(function () {
+            $("#navbar").load("/template/navbar.html");
+        });
+
+    // Für das Alter
+    function set_age() {
+    var heute = new Date();
+    var geb = new Date(2009, 3, 14); // Januar = 0 == April = 3
+
+    // Berechnung des Alters in Jahren
+    var age = heute.getFullYear() - geb.getFullYear();
+    var m = heute.getMonth() - geb.getMonth();
+
+    // Ausnahmefall -> Geburtstag im gleichen Jahr
+    if (m < 0 || (m === 0 && heute.getDate() < geb.getDate())) {
+        age--;
+    }
+
+    document.getElementById("age").innerHTML = age;
+    }
+
+    setTimeout(set_age, 1000);
+</script>

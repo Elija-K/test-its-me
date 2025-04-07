@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/default.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <h1>Meine krassen Projekte</h1>
+    <p>Ich habe viel Projekte, meist nur eine Idee ABER We will go there</p>
+    <p>Nun, was sind den meine Projekte? Ich unterscheide zwischen zwei Projektartten, GitHub und Alle anderen</p>
+    <p>GitHub sind einfach die <a href="https://github.com/Elija-K">Repositories</a> meine Projekte</p>
+    <p>Alle anderen sind einfach alle anderen Projekte die ich habe aus meiner ToDo Liste, Sachen die genug Gross sind das sie nicht irgendetwas sind aber zuwenig gross um etwas Krasses zu sein</p>
+    <h2>Meine Anderen Projekte:</h2>
+    <ul>
+        <div id="maanual">
+            <li><a href="https://open320neo.ch">Open320Neo</a></li>
+            <li>Netzwerkschrank im Odenwilusenz</li>
+        </div>
+    </ul>
+    <h2>Meine GitHub Projekte:</h2>
+    <ul id="github-api"></ul>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    // Automatisches Laden der Navigationsbar
+    $(document).ready(function () {
+            $("#navbar").load("/template/navbar.html");
+        });
+
+    // Automatisches Laden der Projekte von GitHub
+    function showprojects() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://api.github.com/users/Elija-K/repos");
+            xhr.responseType = "json";
+            xhr.send();
+
+            xhr.onload = () => {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const response = xhr.response;
+                    const repoList = document.getElementById("github-api");
+
+                    response.forEach(repo => {
+                        const listItem = document.createElement("li");
+                        listItem.innerHTML = "Name: " + "<a href='" + repo.html_url + "' target='_blank'>" + repo.name +"</a>";
+                        repoList.appendChild(listItem);
+                    });
+                } else {
+                    console.error(`Error: ${xhr.status}`);
+                }
+            };
+    }
+    showprojects();
+</script>

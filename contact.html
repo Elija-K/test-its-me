@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/default.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <h1>Feel Free zum mich kontaktieren</h1>
+    <p>Dadurch das meine Kontaktdaten eh schon im Ref-SH da sind, ist es egal ob ich es hier auch noch Teile</p>
+    <h2>Hier meine Kontaktdaten:</h2>
+    <ul>
+        <li><a href="mailto:elija.kaeser@justsomeone.ch">Meine Private Mail für Private Anfragen oder sonstige Privatliches Zeug</a></li>
+        <li><a href="mailto:elija.kaeser@ref-sh.ch">Meine Kirchliche Mail für Kirchliche Anfragen oder sonstiges Zeug das mit Kirche zutun hat</a></li>
+        <li><a href="tel:+41793999098">Meine Telefonnummer bei Dringenden Sachen</a></li>
+        <li><a href="https://www.instagram.com/der.typ.der.elija.heisst/">Mein Instagram</a></li>
+        <li><a href="https://example.com">(Denke dir was aus)</a></li>
+    </ul>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    // Automatisches Laden der Navigationsbar
+    $(document).ready(function () {
+            $("#navbar").load("/template/navbar.html");
+        });
+</script>

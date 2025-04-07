@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi</title>
+</head>
+<body>
+    <h1>Hi, ich bin Elija</h1>
+    <p>Für die die mich kennen herzlichen Glückwunsch!!! (Die dürfen <a onclick="skip_introduction()">[hier]</a> klicken)</p>
+    <p>Für die die mich noch nicht kennen, hier ist die möglichkeit es zu tun!</p>
+    <p>Als nächstes würde ich mich gerne <a href="/tutorial/first-ueber-mich">[Vorstellen]</a></p>
+</body>
+</html>
+<script>
+    function skip_introduction() {
+        document.cookie = "alreadyVisited=true; expires=Wed, 14 Apr 9999 23:59:59 UTC;";
+        window.location.href = "/";
+    }
+</script>

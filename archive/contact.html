@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite</title>
+    <link rel="stylesheet" href="style/default.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <h1>Wie kann man den Menschen erreichen?</h1>
+    <h3>Hier findest du meine Top Kontaktmöglichkeiten:</h3>
+    <ul>
+        <li><a href="mailto:elija.kaeser@proton.me">E-Mail</a></li>
+        <li><a href="https://www.reddit.com/user/Elija__Elija/">Reddit</a></li>
+        <li><a href="https://www.instagram.com/der.typ.der.elija.heisst/">Instagram</a></li>
+        <li><a href="https://github.com/Elija-K">Github</a></li>
+        <li><a href="javascript:discord();">Discord</a></li>
+    </ul>
+</body>
+</html>
+<script src="/scripts/scramble.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+            $("#navbar").load("/template/navbar.html");
+        });
+
+    function discord() {
+        alert("Username: username_is_not_necesarry")
+    }
+</script>

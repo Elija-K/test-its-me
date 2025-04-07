@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial bestanden</title>
+</head>
+<body>
+    <h1>Herzlichen Glückwunsch</h1>
+    <p>Du hast das Tutorial überstanden und darfst somit nun in meine eigentliche Seite eintreten und dich da breit machen</p>
+    <p>Falls du das Tutorial jemals wieder durchmachen möchtest kannst du einfach den Cookie löschen (oder unten am Boden der Webseite Tutorial durchmachen drücken)</p>
+    <p>Viel Spass, du kannst einfach <a onclick="youaredone()">[hier]</a> klicken</p>
+</body>
+</html>
+<script>
+    function youaredone() {
+        document.cookie = "alreadyVisited=true; expires=Wed, 14 Apr 9999 23:59:59 UTC;";
+        window.location.href = "/";
+    }
+</script>

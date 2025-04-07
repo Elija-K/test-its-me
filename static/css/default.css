@@ -1,0 +1,50 @@
+/* Just the Body */
+body {
+    font-family: Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #0F0005;
+    color: #E0EEEA;
+    padding: 20px;
+    font-size: larger;
+    margin-left: 15%;
+    margin-right: 15%;;
+}
+
+/* Bold Tag */
+b {
+    font-size: x-large;
+    color: #F0FFFA;
+    margin: 0 5px;
+}
+
+/* Navigationsbar */
+nav {
+    margin: 20px 0;
+    text-align: center;
+}
+nav a {
+    color: #DDDDFF;
+    text-decoration: none;
+    margin: 0 0.5%;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #DDDDDD;
+    text-decoration: double;
+}
+
+/* a Tags */
+a {
+    color: #DDDDFF;
+    text-decoration: none;
+}
+a:hover {
+    color: #EEEEEE;
+    text-decoration: double;
+}
+
+/* List */
+li::marker {
+    content:"- ";
+    
+}

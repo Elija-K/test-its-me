@@ -1,0 +1,26 @@
+@font-face {
+    font-family: moderndos;
+    src: url(/font/ModernDOS/ModernDOS8x14.ttf);
+}
+html {
+    font-family: moderndos;
+    background-color: black;
+    color: green;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    list-style-position: inside;
+}
+a:link, a:visited, a:hover {
+    color: green;
+    text-decoration: none;
+}
+
+button, input, input::file-selector-button {
+    font-family: moderndos;
+    background: black;
+    color: green;
+    border-style: solid;
+    border-color: green;
+    border-width: 1px;
+}
